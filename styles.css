@@ -4,6 +4,7 @@
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 3fr;
     gap: 10px;
+    background-color: blue;
 }
 
 .grid-item{
@@ -53,9 +54,13 @@
 .announcements{
     grid-column: 2/3;
     grid-row:1/2;
+    display: grid;
+    grid-template-rows: 40px 1fr;
 }
 
 .trending{
     grid-column: 2/3;
     grid-row: 2/3;
+    display: grid;
+    grid-template-rows: 40px 1fr;
 }
