@@ -43,7 +43,7 @@
     place-self: center;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    gap: 20px;
 
     p{
         font-weight: bold;
@@ -72,6 +72,7 @@
 .flex.buttons{
     justify-content: space-between;
     align-items: flex-end;
+    padding-bottom: 13px;
     button{
         border:none;
         border-radius: 17px;
@@ -88,13 +89,9 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 3fr;
-    background-color: blue;
+    grid-template-rows: 0.5fr 3fr;
+    background-color: var(--back-color);
     font-family: "Roboto";
-}
-
-.grid-item{
-    background-color: red;
 }
 
 .header{
@@ -103,7 +100,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 50px 1fr;
-    padding: 10px 40px 20px 40px;
+    padding: 10px 40px 10px 40px;
     row-gap: 10px;
     background-color: var(--fore-color);
     .header-svg{
@@ -155,22 +152,70 @@
     grid-column: 2/3;
     grid-row: 2;
     display: grid;
-    gap: 5px;
-    grid-template-columns: 3fr 1fr;
+    gap: 15px;
+    grid-template-columns: 2.7fr 1fr;
     grid-template-rows: 1.25fr 1fr;
+    padding: 10px 20px 40px 15px;
 }
+
+
 
 .projects{
     grid-column: 1/2;
     grid-row: 1/3;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-    grid-template-rows: 40px;
-    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 1fr;
+
+    h3{
+        font-size: 16px;
+        place-self: end start;
+        padding-bottom: 8px;
+    }
 
     .project-header{
         grid-column: 1/-1;
     }
+
+    .project-card{
+        position: relative;
+        background-color: var(--fore-color);
+        padding: 15px 30px 10px 20px;
+        border-left: solid 10px var(--project-highlight-color);
+        border-radius: 5px;
+        max-height: 300px;
+    }
+
+    .project-card > p{
+        font-size: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: #717171;
+    }
+
+    .project-card > h4 {
+        font-size: 14px;
+    }
+
+    .project-card svg{
+        width: 20px;
+    }
+
+    .project-card > div{
+        position: absolute;
+        bottom: 12.5px;
+        right: 20px;
+        display: flex;
+        gap: 15px;
+    }
+}
+
+.projects > div{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap:15px;
 }
 
 
@@ -179,13 +224,43 @@
     grid-row:1/2;
     display: grid;
     grid-template-rows: 40px 1fr;
+
+    h3{
+        font-size: 16px;
+        place-self: end start;
+        padding-bottom: 8px;
+    }
+    
+
+    div > h4{
+        font-size: 12px;
+    }
+
+    div > p{
+        font-size: 11px;
+        color: #717171;
+         display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .announcement-card:not(:last-child) {
+        border-bottom: 1px solid #D2D2D2;
+    }
+}
+
+.announcements > div{
+    background-color: var(--fore-color);
+    border-radius: 7px;
+    padding: 15px;
 }
 
 .announcement-card{
-    height: 95px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 9.5px 0px;
 }
 
 .trending{
@@ -193,4 +268,42 @@
     grid-row: 2/3;
     display: grid;
     grid-template-rows: 40px 1fr;
+    
+    h3{
+        font-size: 16px;
+        place-self: end start;
+        padding-bottom: 8px;
+    }
+
+    
+
+    p{
+        font-size: 12px;
+    }
+
+    .trending-card{
+        display: flex;
+    }
+
+    .trending-card > div > p:nth-child(2){
+        color: #717171;
+    }
+
+    .trending-card > img{
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+    }
+}
+.trending > div{
+    background-color: var(--fore-color);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 30px;
+
+    div{
+        margin-left: 15px;
+    }
 }
